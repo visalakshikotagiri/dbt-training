@@ -33,11 +33,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_training:
+    QWT:
+      database: QWT
     # Applies to all files under models/example/
     example:
-      materialized: view
-
+      materialized: table
 seeds:
   jaffle_shop:
-    schema: seed_data
+    +schema: seed_data
   
